@@ -15,14 +15,16 @@ import os
 from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+# !!! change manage.py !!!
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xr!vf$7lw$v0nvplj$d1_de!9xzj*3epgcxav9r1^dtm$dj)f)'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -189,7 +191,8 @@ SESSION_COOKIE_AGE = 2 * 3600
 # FIXTURE_DIRS = (os.path.join(BASE_DIR, 'tests/fixtures'),)
 
 
-# try:
-#     from app.settings.old.settings_local import *
-# except ImportError:
-#     pass
+try:
+    # from app.settings_local import *
+    from app.settings.old.settings_local import * # noqa
+except ImportError:
+    pass
