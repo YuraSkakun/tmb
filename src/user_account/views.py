@@ -93,7 +93,8 @@ class ContactUsView(FormView):
                 # message=form.cleaned_data['message'] + request.user.email,
                 message=form.cleaned_data['message'] + f" {user_email}",
                 from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[settings.EMAIL_HOST_USER],
+                # recipient_list=[settings.EMAIL_HOST_USER],
+                recipient_list=['yuraskakun@ukr.net', f"{user_email}"],
                 fail_silently=False,
             )
             return self.form_valid(form)

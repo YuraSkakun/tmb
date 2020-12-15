@@ -46,6 +46,11 @@
 
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
+
+                    <li class="nav-item {% if request.path == profile_url %} active {%endif%}">
+                            <a class="nav-link" href="{% url 'account:contact_us' %}">Contact us</a>
+                    </li>
+
                     <li class="nav-item">
                         <img class="rounded-circle p-1 m-1" width="45" height="45"  src="{{ user.image.url }}">
                     </li>

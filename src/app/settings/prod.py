@@ -2,15 +2,22 @@ from app.settings.components.base import * # noqa
 
 from app.settings.components.database import * # noqa
 
-# from app.settings.components.email import * # noqa
+from app.settings.components.email import * # noqa
 
 import os
 
 SECRET_KEY = os.environ['SECRET_KEY']
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+ALLOWED_HOSTS = ['*', '127.0.0.1', 'localhost']
+# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 DEBUG = False
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'cdn/static')
+STATIC_ROOT = '/var/www/tmb/static'
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/var/www/tmb/media'
 
 print('')
 
