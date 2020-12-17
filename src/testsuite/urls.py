@@ -1,6 +1,7 @@
 from django.urls import path
 
 from . import views
+from .views import slow_func
 
 app_name = 'testsuite'
 
@@ -13,4 +14,7 @@ urlpatterns = [
     path('<int:pk>/next/', views.TestRunView.as_view(), name='next'),
 
     path('leader/', views.UserLeaderBoardListView.as_view(), name='leader_board'),
+
+    path('slow', slow_func, name='slow'),
+
 ]

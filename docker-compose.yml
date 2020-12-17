@@ -21,6 +21,7 @@ services:
       - .env
     depends_on:
       - postgresql
+#      - celery
 #      - rabbitmq
 
   postgresql:
@@ -66,7 +67,7 @@ services:
 #    volumes:
 #      - ./src:/opt/project
 #      - ./commands:/opt/project/commands
-#
+
 #  celerybeat:
 #    env_file: .env
 #    build: .
@@ -80,7 +81,6 @@ services:
 #    volumes:
 #      - ./src:/opt/project
 #      - ./commands:/opt/project/commands
-
 
 volumes:
   pgdata: {}
